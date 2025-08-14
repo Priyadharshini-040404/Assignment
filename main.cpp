@@ -6,12 +6,17 @@
 namespace fs = std::filesystem;
 
 int main() {
-    std::string fileA = "A.csv";
-    std::string fileB = "B.csv";
+    std::string fileA = "Employee.csv";
+    std::string fileB = "Promotion.csv";
 
-    // Check if A.csv exists
+    // Check if Employee.csv exists
     if (!fs::exists(fileA)) {
         std::cerr << "Error: " << fileA << " does not exist.\n";
+        return 1;
+    }
+    // Check if Employee.csv is empty
+    if (fs::file_size(fileA) == 0) {
+        std::cerr << "Error: " << fileA << " is empty.\n";
         return 1;
     }
     return 0;
