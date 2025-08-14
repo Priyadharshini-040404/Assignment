@@ -26,6 +26,11 @@ int main() {
         return 1;
     }
 
-  
+   // Open Promotion.csv for writing (this will create it if not exists, or empty it if exists)
+    std::ofstream outFile(fileB, std::ios::trunc);
+    if (!outFile) {
+        std::cerr << "Error: cannot write to " << fileB << "\n";
+        return 1;
+    }
     return 0;
 }
