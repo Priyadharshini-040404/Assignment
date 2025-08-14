@@ -32,5 +32,17 @@ int main() {
         std::cerr << "Error: cannot write to " << fileB << "\n";
         return 1;
     }
+
+    // Copy content from Employee.csv to Promotion.csv
+    std::string line;
+    while (std::getline(inFile, line)) {
+        outFile << line << "\n";
+    }
+     inFile.close();
+    outFile.close();
+
+    // Output Promotion.csv content
+    std::cout << "Successfully copied to " << fileB << ":\n";
+    
     return 0;
 }
