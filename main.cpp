@@ -19,5 +19,13 @@ int main() {
         std::cerr << "Error: " << fileA << " is empty.\n";
         return 1;
     }
+        // Open Employee.csv for reading
+    std::ifstream inFile(fileA);
+    if (!inFile) {
+        std::cerr << "Error: Cannot open " << fileA << " for reading.\n";
+        return 1;
+    }
+
+  
     return 0;
 }
